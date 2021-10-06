@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using NguyenDangCu133.Data;
+using NDC0133.Data;
 
 namespace NguyenDangCu133
 {
@@ -29,6 +30,9 @@ namespace NguyenDangCu133
 
             services.AddDbContext<NguyenDangCu133Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("NguyenDangCu133Context")));
+
+            services.AddDbContext<NDC0133Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("NDC0133Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
